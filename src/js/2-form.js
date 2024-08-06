@@ -1,3 +1,4 @@
+
 const feedbackFormEl = document.querySelector('.feedback-form');
 const formData = {};
 
@@ -8,6 +9,12 @@ const fillFormField = () => {
         return;
     }
     console.log(formdDataFromLs);
+
+    for (const key in formdDataFromLs) {
+        if(formdDataFromLs.hasOwnProperty(key)){
+            feedbackFormEl.elements[key].value = formdDataFromLs[key];
+        }
+    }
 }
 
 fillFormField();
